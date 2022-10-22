@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>DDetect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}" />
+  <link rel="icon" href="data:,">
+  <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="main">
+    <div class="title">
+      <h3>Lung Cancer Detection</h3>
+    </div>
+
+    <div class="panel">
+      <input id="file-upload" class="hidden" type="image" accept="image/x-png,image/gif,image/jpeg" />
+      <label for="file-upload" id="file-drag" class="upload-box">
+        <div id="upload-caption">Drop image here or click to select</div>
+        <img id="image-preview" class="hidden" />
+      </label>
+    </div>
+    <div style="margin-bottom: 2rem;">
+      <input type="button" value="Submit" class="button" onclick="submitImage();" />
+      <input type="button" value="Clear" class="button" onclick="clearImage();" />
+    </div>
+    
+
+    <div id="image-box">
+      <img id="image-display" />
+      <div id="pred-result" class="hidden"></div>
+      <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+      </svg>
+    </div>
+  </div>
+
+
+  <div class="main">
+    <div class="title">
+      <centre>
+      <h4>CANCER DETECTED</h4>
+      <h4>Type: large.cell.carcinoma </h4>
+      <h4>98.84% confidence there is a large.cell.carcinoma</h4>
+      <h4>1.16%  confidence there is no Cancer</h4>
+
+      <h5>Large-cell carcinoma (LCC, LCLC) is a heterogeneous group of undifferentiated malignant neoplasms that lack the cytologic and architectural features of small cell carcinoma and glandular or squamous differentiation. 
+        LCC is categorized as a type of NSCLC (non-small-cell lung carcinoma) which originates from epithelial cells of the lung</h5>
+      </centre>
+      </div>
+
+
+</body>
+
+<footer>
+  <script src="{{ url_for('static',filename='main.js') }}"></script>
+</footer>
+
+</html>
